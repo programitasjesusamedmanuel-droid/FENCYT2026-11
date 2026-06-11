@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Caseras - Cuidado Corporal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Modal de nombre e institución -->
+  <div id="modal-nombre-institucion" style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:22222; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.23);">
+    <div style="background:#fffbe6; border-radius:18px; box-shadow:0 6px 38px #c6f0c344; padding:32px 28px 16px 28px; min-width:320px; text-align:center;">
+      <h2 style="color:#c65353;margin-bottom:18px;">¡Bienvenido!</h2>
+      <p style="margin-bottom:12px;">Por favor, introduce tu <b>nombre</b> y <b>institución/colegio</b>:</p>
+      <input id="input-nombre" type="text" placeholder="Tu nombre..." style="margin-bottom:10px;width:95%;font-size:1.08em;padding:10px;border-radius:9px;border:1.5px solid #ffd6e0;">
+      <br>
+      <input id="input-institucion" type="text" placeholder="Institución/colegio..." style="margin-bottom:12px;width:95%;font-size:1.08em;padding:10px;border-radius:9px;border:1.5px solid #ffd6e0;">
+      <br>
+      <button id="guardar-nombre-institucion" class="portada-btn" style="font-size:1.1em;">Continuar</button>
+    </div>
+  </div>
+
+  <!-- ===== PORTADA: SIN LOGOS/IMÁGENES, TODO CSS/SVG ===== -->
+<section id="portada" class="portada" aria-labelledby="portada-title" role="dialog">
+
+  <!-- Loader cinematic -->
+  <div id="portada-loader" class="portada-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-icon">🌿</div>
+      <div class="loader-text">Preparando tu experiencia…</div>
+      <div class="loader-bar"><div id="loader-progress" class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- Decorative background (pure CSS blobs) -->
+  <div class="portada-bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="dots"></div>
+  </div>
+
+  <!-- Main panel -->
+  <div class="portada-panel container" role="group" aria-label="Portada BloomSkin">
+    <div class="portada-left">
+      <div class="brand-hero" aria-hidden="true">
+        <div class="brand-hero-title">BloomSkin</div>
+        <div class="brand-hero-sub">Skin & Care — desde <span class="from-region">SAN MARTIN <span class="heart">❤</span></span></div>
+      </div>
+
+      <h1 id="portada-title" class="portada-head">
+        Transforma tu rutina con recetas naturales
+      </h1>
+
+      <p class="portada-punch">
+        Tu asistente de belleza natural: recetas claras, prácticas y pensadas para escuelas y hogares.
+      </p>
+
+      <div class="portada-ctas">
+        <button id="entrarBtn" class="portada-btn primary">Entrar a la App</button>
+      </div>
+
+      <div class="portada-cards">
+        <div class="card feature color-1">
+          <div class="icon">💄</div>
+          <div class="meta"><strong>Recetas inteligentes:
+            </strong><span>Filtra por problema o ingrediente</span></div>
+        </div>
+        <div class="card feature color-2">
+          <div class="icon">🌿</div>
+          <div class="meta"><strong>Ingredientes reales:
+            </strong><span>Aloe, avena, miel</span></div>
+        </div>
+        <div class="card feature color-3">
+          <div class="icon">🤝</div>
+          <div class="meta"><strong>Hecho para comunidades:
+            </strong><span>Fácil y seguro</span></div>
+        </div>
+      </div>
+
+      <p class="portada-tagline">Empieza hoy: cuida tu piel con ciencia tradicional y cariño moderno. ✨</p>
+    </div>
+
+    <div class="portada-right" aria-hidden="true">
+      <!-- Large decorative SVG (sin usar fichero externo) -->
+      <div class="hero-art" role="img" aria-label="Ilustración abstracta de plantas y formas">
+        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+          <!-- background gradient shapes -->
+          <defs>
+            <linearGradient id="gA" x1="0" x2="1">
+              <stop offset="0" stop-color="#FF7BAC"/>
+              <stop offset="1" stop-color="#FFB86B"/>
+            </linearGradient>
+            <linearGradient id="gB" x1="0" x2="1">
+              <stop offset="0" stop-color="#6DE6A3"/>
+              <stop offset="1" stop-color="#0B6E66"/>
+            </linearGradient>
+            <filter id="blurSoft"><feGaussianBlur stdDeviation="18" /></filter>
+          </defs>
+
+          <!-- big blobs -->
+          <g filter="url(#blurSoft)" opacity="0.95">
+            <ellipse cx="520" cy="180" rx="260" ry="160" fill="url(#gA)"/>
+            <ellipse cx="220" cy="380" rx="220" ry="140" fill="url(#gB)"/>
+            <circle cx="540" cy="420" r="70" fill="#8F7BFF" opacity="0.55"/>
+          </g>
+
+          <!-- stylized plant lines (pure vector) -->
+          <g transform="translate(120,120)" stroke="#fff" stroke-width="2" fill="none" opacity="0.95">
+            <path d="M30 200 C 40 120, 80 80, 120 60" stroke-opacity="0.9"/>
+            <path d="M40 190 C 60 140, 100 110, 140 90" stroke-opacity="0.75"/>
+            <path d="M90 210 C 120 160, 160 130, 200 110" stroke-opacity="0.65"/>
+          </g>
+
+          <!-- subtle lines / shine -->
+          <g opacity="0.18" fill="#fff">
+            <rect x="40" y="20" width="160" height="8" rx="4"/>
+            <rect x="620" y="520" width="120" height="6" rx="3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="bienvenidaMensaje" class="bienvenida-mensaje oculto">¡Bienvenidos a la app!</div>
+</section>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <h1><i class="fas fa-leaf"></i> DESDE SAN MARTIN❤Recetas</h1>
+      <!-- CHATBOT AQUÍ BAJO EL HEADER -->
+      <button id="chatbot-btn" class="chatbot-icon-header" title="Abrir Chat IA">
+        <i class="fas fa-robot"></i>
+      </button>
+      <button id="menu-btn-mobile" class="menu-btn-mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button id="toggle-theme-btn" class="toggle-theme-mobile" aria-label="Cambiar tema" title="Cambiar tema">
+        <i id="theme-icon" class="fa fa-moon"></i>
+      </button>
+    </div>
+
+    <!-- Navegación de categorías -->
+    <nav id="nav-wrapper" class="nav-wrapper">
+      <div class="nav-container">
+        <ul id="nav-menu" class="nav-menu-horizontal">
+          <li><a href="#" class="active" data-category="todas">Todas</a></li>
+          <li><a href="#" data-category="piel">Piel</a></li>
+          <li><a href="#" data-category="labios">Labios</a></li>
+          <li><a href="#" data-category="cabello">Cabello</a></li>
+          <li><a href="#" data-category="mascarillas">Mascarillas</a></li>
+        </ul>
+        <button id="btn-ver-mas" class="btn-ver-mas" title="Ver más categorías">
+          <i class="fas fa-ellipsis-h"></i> Más
+        </button>
+      </div>
+
+      <!-- Categorías ocultas (expandibles) -->
+      <ul id="nav-menu-expandible" class="nav-menu-expandible">
+        <li><a href="#" data-category="manos">Manos</a></li>
+        <li><a href="#" data-category="nutricion">Nutrición</a></li>
+        <li><a href="#" data-category="proyectos-fencyt">Proyectos FENCYT</a></li>
+        <li><a href="#" data-category="bienestar">Bienestar</a></li>
+        <li><a href="#" data-category="tarapoto">Tarapoto</a></li>
+         <li><a href="#" data-category="purgantes">Purgantes</a></li>
+<li><a href="#" data-category="energia">Energía</a></li>
+        <li><a href="#" data-category="cuñumbuque">Cuñumbuque</a></li>
+        <li><a href="#" data-category="relajacion">Relajación</a></li>
+        <li><a href="#" data-category="peso">Peso</a></li>
+        <li class="separator"></li>
+        <li><a href="#" id="favoritos-btn" class="special-btn">
+          <i class="fas fa-heart"></i> Favoritos
+        </a></li>
+        <li><a href="#" id="config-btn" class="special-btn">
+          <i class="fas fa-cog"></i> Config
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section id="recetas-container" class="recetas-grid">
+      <!-- Las recetas se cargarán dinámicamente aquí -->
+    </section>
+  </main>
+
+  <!-- Modal Detalle Receta -->
+  <div id="modal-receta" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="detalle-receta"></div>
+    </div>
+  </div>
+
+  <!-- Modal Favoritos -->
+  <div id="modal-favoritos" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Mis Recetas Favoritas</h2>
+      <div id="favoritos-container"></div>
+    </div>
+  </div>
+
+  <!-- Modal Configuración -->
+  <div id="modal-config" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Configuración</h2>
+      <div class="config-options">
+        <div class="config-item">
+          <label for="theme">Tema:</label>
+          <select id="theme">
+            <option value="light">Claro</option>
+            <option value="dark">Oscuro</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label for="notifications">Notificaciones:</label>
+          <input type="checkbox" id="notifications">
+        </div>
+        <div class="config-item">
+          <label for="language">Idioma:</label>
+          <select id="language">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+        <button id="save-config">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🤖 MODAL CHATBOT IA -->
+  <div id="modal-chatbot" class="modal">
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+        <h2>🤖 IA Amigable</h2>
+        <span class="close" id="close-chatbot">&times;</span>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message bot-message">
+          <p>¡Hola! 👋 Soy una IA básica que busca que cuides las plantas y el medio ambiente. 🌱🌍<br><br>Recuerda: <strong>cuando eliges lo natural, no solo te cuidas tú... también cuidas el mundo donde vives.</strong> ✨</p>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+        <button id="send-btn" class="btn-send">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
